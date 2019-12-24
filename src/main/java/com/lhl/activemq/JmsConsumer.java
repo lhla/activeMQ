@@ -47,7 +47,13 @@ public class JmsConsumer {
         session.close();
         connection.close();*/
 
-        //第二种接收消息的方式：通过监听的方式来消费消息
+        /*
+        第二种接收消息的方式：通过监听的方式来消费消息
+            异步非阻塞方式(监听器onMessage())
+            订阅者或接收者通过MessageConsumer的setMessageListener(MessageListener listener)注册一个消息监听器，
+            当消息到达之后，系统自动调用监听器MessageListener的onMessage(Message message)方法。
+
+        */
         messageConsumer.setMessageListener(new MessageListener() {
             @Override
             public void onMessage(Message message) {

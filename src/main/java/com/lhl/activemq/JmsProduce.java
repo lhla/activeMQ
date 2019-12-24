@@ -27,7 +27,7 @@ public class JmsProduce {
         //5.创建消息的生产者
         MessageProducer messageProducer = session.createProducer(queue);
         //6.通过使用messageProducer生产3条消息发送到MQ的队列里面
-        for (int i = 1;i<=3;i++){
+        for (int i = 1;i<=6;i++){
             //7.创建消息，这个消息是根据要求格式写好的
             TextMessage message = session.createTextMessage("MessageListener---" + i);//理解为一个字符串
             //8.通过messageProducer发送（推送）给mq
